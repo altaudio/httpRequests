@@ -1,1 +1,1 @@
-export default "Banana!"
+export default 'Banana!'
