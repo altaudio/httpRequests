@@ -1,3 +1,4 @@
+
 import request from 'superagent'
 import _ from 'lodash'
 
@@ -11,12 +12,11 @@ request
   .get('https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums')
     .end((err, res) => {
       const bushAlbums =
-        _.uniqBy(
+        _.uniq(
           (_.map(res.body.items, (obj) => {
             return obj.name
           })
-        ), (album) => { return album })
+        ))
 
       console.log(bushAlbums)
     })
-
